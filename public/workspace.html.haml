@@ -1,0 +1,131 @@
+!!!
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    / Set the viewport width to device width for mobile
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    %title Welcome to Foundation | Workspace
+    %link{:href => "css/normalize.css", :rel => "stylesheet"}/
+    %link{:href => "css/foundation.css", :rel => "stylesheet"}/
+    %script{:src => "js/vendor/custom.modernizr.js"}
+  %body
+    .row
+      .large-12.columns
+        / Navigation
+        %nav.top-bar
+          %ul.title-area
+            / Title Area
+            %li.name
+              %h1
+                %a{:href => "#"}
+                  Top Bar Title
+            %li.toggle-topbar.menu-icon
+              %a{:href => "#"}
+                %span menu
+          %section.top-bar-section
+            %ul.left
+              %li
+                %a{:href => "#"} Link 1
+              %li
+                %a{:href => "#"} Link 2
+            %ul.right
+              %li.search
+                %form
+                  %input{:type => "search"}/
+              %li.has-button
+                %a.small.button{:href => "#"} Search
+        / End Navigation
+    .row
+      .large-12.columns
+        / Desktop Slider
+        .hide-for-small
+          #featured{"data-orbit" => ""}
+            %img{:alt => "slide image", :src => "http://placehold.it/1000x400&text=Slide Image 1"}/
+            %img{:alt => "slide image", :src => "http://placehold.it/1000x400&text=Slide Image 2"}/
+            %img{:alt => "slide image", :src => "http://placehold.it/1000x400&text=Slide Image 3"}/
+        / End Desktop Slider
+        / Mobile Header
+        .row
+          .small-12.show-for-small
+            %br/
+            %img{:src => "http://placehold.it/1000x600&text=For Small Screens"}/
+        / End Mobile Header
+    %br/
+    .row
+      .large-12.columns
+        .row
+          / Thumbnails
+          .large-3.small-6.columns
+            %img{:src => "http://placehold.it/250x250&text=Thumbnail"}/
+            %h6.panel Description
+          .large-3.small-6.columns
+            %img{:src => "http://placehold.it/250x250&text=Thumbnail"}/
+            %h6.panel Description
+          .large-3.small-6.columns
+            %img{:src => "http://placehold.it/250x250&text=Thumbnail"}/
+            %h6.panel Description
+          .large-3.small-6.columns
+            %img{:src => "http://placehold.it/250x250&text=Thumbnail"}/
+            %h6.panel Description
+          / End Thumbnails
+    .row
+      .large-12.columns
+        .row
+          / Content
+          .large-8.columns
+            .panel.radius
+              .row
+                .large-6.small-6.columns
+                  %h4 Header
+                  %hr/
+                  %h5.subheader
+                    Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
+                  .show-for-small{:align => "center"}
+                    %a.small.radius.button{:href => "#"} Call To Action!
+                    %br/
+                    %a.small.radius.button{:href => "#"} Call To Action!
+                .large-6.small-6.columns
+                  %p
+                    Suspendisse ultrices ornare tempor. Aenean eget ultricies libero. Phasellus non ipsum eros. Vivamus at dignissim massa. Aenean dolor libero, blandit quis interdum et, malesuada nec ligula. Nullam erat erat, eleifend sed pulvinar ac. Suspendisse ultrices ornare tempor. Aenean eget ultricies libero.
+          .large-4.columns.hide-for-small
+            %h4 Get In Touch!
+            %hr/
+            %a{:href => "#"}
+            .panel.radius.callout{:align => "center"}
+              %strong Call To Action!
+            %a{:href => "#"}
+            .panel.radius.callout{:align => "center"}
+              %strong Call To Action!
+          / End Content
+    / Footer
+    %footer.row
+      .large-12.columns
+        %hr/
+        .row
+          .large-6.columns
+            %p &copy; Copyright no one at all. Go to town.
+          .large-6.columns
+            %ul.inline-list.right
+              %li
+                %a{:href => "#"} Link 1
+              %li
+                %a{:href => "#"} Link 2
+              %li
+                %a{:href => "#"} Link 3
+              %li
+                %a{:href => "#"} Link 4
+    :javascript
+      document.write('<script src=js/vendor/' +
+      ('__proto__' in {} ? 'zepto' : 'jquery') +
+      '.js><\/script>')
+    %script{:src => "js/foundation.min.js"}
+    :javascript
+      $(document).foundation();
+    :javascript
+      $(window).load(function() {
+        $('#featured').orbit({ fluid: '2x1' });
+      });
+    / End Footer

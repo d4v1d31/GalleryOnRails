@@ -1,0 +1,35 @@
+.row
+  .large-12.columns.large-centered
+    .small-2.columns.panel
+
+      = render "shared/side_nav"
+
+    .small-10-columns{style: "float:left; margin-left:10px "}
+      %h2
+        Nutzer hinzufügen
+
+      = form_for @user do |f|
+        -if @user.errors.any?
+          .error_messages
+            %h2 Form is invalid
+            %ul
+              -for message in @user.errors.full_messages
+                %li 
+                  = message
+              
+            %ul
+        
+        .field
+          = f.label :email
+          = f.text_field :email
+
+        .field
+          = f.label :password
+          = f.password_field :password
+
+        .field
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation
+
+        .actions
+          = f.submit

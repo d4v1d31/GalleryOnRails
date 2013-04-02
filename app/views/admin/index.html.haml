@@ -1,0 +1,26 @@
+.row
+  .large-12.columns.large-centered
+    .small-2.columns.panel
+
+      = render "shared/side_nav"
+
+    .small-10.columns
+      %h2
+        Admin Dashboard - Alben
+      .alert-box.secondary
+        Willkommen! Hier finde Sie alle möglichkeiten zur Verwaltung der Seite.
+      .row
+        .large-12.columns
+          .row
+            / Thumbnails
+            - @albums.each do |album|
+              .large-6.small-6.columns
+                %img{:src => album.albumthumbnail_url(:thumbsmal).to_s}
+                .panel
+                  =link_to "Edit", edit_album_path(album)
+                  =link_to "Destroy", album, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                  %h6
+                    = album.description
+          .row
+            .large-12.columns
+              = link_to 'New Album', new_album_path, class: "button"

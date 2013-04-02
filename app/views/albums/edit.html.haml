@@ -1,0 +1,13 @@
+.row
+  .large-12.columns.large-centered
+    .large-2.columns.panel
+
+      = render "shared/side_nav"
+
+    .large-10.columns
+      %h2
+        Admin Dashboard - Editing album
+      .row
+        = render @album.pictures
+      =link_to "Bild Hinzufügen", new_album_picture_path(@album), class: "button"
+      = render 'form'

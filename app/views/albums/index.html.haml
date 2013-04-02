@@ -1,0 +1,51 @@
+
+.row
+  .large-12.columns
+    / Desktop Slider
+    .hide-for-small
+      #featured{"data-orbit" => ""}
+        -@promoted_pics.each do |pic|
+          %img{:alt => "slide image", :src => pic.image_url(:thumbbig).to_s}/
+    / End Desktop Slider
+    / Mobile Header
+    .row
+      .small-12.show-for-small
+        %br/
+        -if @promoted_pics.any?
+          %img{:src => @promoted_pics.first.image_url(:thumbbig).to_s}/
+    / End Mobile Header
+%br/
+.row
+  .large-12.columns
+    .row
+      / Thumbnails
+      - @albums.each do |album|
+        .large-3.small-6.columns
+          %a{:href => album_pictures_path(album)}
+            %img{:src => album.albumthumbnail_url(:thumbsmal).to_s}/
+          %h6.panel
+            = album.description
+      / End Thumbnails
+/ End Content
+
+-# %h1 Listing albums
+
+-#%table
+-#  %tr
+-#    %th Name
+-#    %th Description
+-#    %th
+-#    %th
+-#    %th
+
+-#  - @albums.each do |album|
+-#    %tr
+-#      %td= album.name
+-#      %td= album.description
+-#      %td= link_to 'Show', album
+-#      %td= link_to 'Edit', edit_album_path(album)
+-#      %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+-#%br
+
+-#= link_to 'New Album', new_album_path

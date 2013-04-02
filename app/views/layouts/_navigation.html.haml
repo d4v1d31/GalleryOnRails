@@ -1,0 +1,23 @@
+/ Navigation
+%nav.top-bar
+  %ul.title-area
+    / Title Area
+    %li.name
+      %h1
+        %a{:href => "/"}
+          Gallery On Rails
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span menu
+  %section.top-bar-section
+    %ul.left
+      %li
+        %a{:href => "#"} Start
+      %li
+        %a{:href => "#"} Albums
+    -if logged_in?
+      %ul.right
+        %li
+          =link_to "logout", logout_path
+
+/ End Navigation

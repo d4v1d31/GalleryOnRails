@@ -1,0 +1,13 @@
+.row
+  .large-12.columns.large-centered
+    .large-2.columns.panel
+
+      = render "shared/side_nav"
+
+    .large-10.columns
+      %h2
+        Admin Dashboard - Editing picture
+      .row
+        .large-12.columns
+          = image_tag @picture.image_url.to_s
+      = render "form"

@@ -1,0 +1,12 @@
+%ul.side-nav
+  %li
+    %a{href: "/users"}
+      Users
+  %li
+    %a{href: "/admin"}
+      Albums
+%p{:id => "errornote"}
+  -if notice
+    .alert-box.success{"data-alert" => ""}
+      =notice
+      %a.close{href: "#"} &times;

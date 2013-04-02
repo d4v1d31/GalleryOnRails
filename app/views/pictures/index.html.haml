@@ -1,0 +1,13 @@
+.row
+  .large-12.columns.large-centered
+    %h2
+      = @album.name
+    %p
+      = @album.description
+  .row
+    .large-12.columns.large-centered
+      %ul.clearing-thumbs{"data-clearing" => ""}
+        -@album.pictures.each do |pic|
+          %li{style: "list-style-type:none; float:left; margin:5px"}
+            %a.th{href: pic.image_url.to_s}
+              %img{src: pic.image_url(:thumbsmal).to_s, "data-caption" => pic.description}
