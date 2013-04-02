@@ -20,5 +20,8 @@
       .field
         = f.label :albumthumbnail
         = f.file_field :albumthumbnail
+      .field
+        = f.label :promoted
+        = f.check_box :promoted
       .actions
         = f.submit 'Save', class: "button"
