@@ -2,10 +2,8 @@
 .row
   .large-12.columns
     / Desktop Slider
-    .hide-for-small
-      #featured{"data-orbit" => ""}
-        -@promoted_pics.each do |pic|
-          %img{:alt => "slide image", :src => pic.image_url(:thumbbig).to_s}/
+    #slider
+      = image_tag @promoted_pics.first.image_url.to_s if @promoted_pics.any?
     / End Desktop Slider
     / Mobile Header
     .row
@@ -27,6 +25,11 @@
             = album.description
       / End Thumbnails
 / End Content
+- slider = escape_javascript(render 'shared/slider')
+- content_for :scripts do
+  :javascript
+    $("#slider").replaceWith("#{slider}");
+    $(document).foundation();
 
 -# %h1 Listing albums
 

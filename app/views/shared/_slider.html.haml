@@ -1,0 +1,4 @@
+.hide-for-small
+  #featured{"data-orbit" => ""}
+    -@promoted_pics.each do |pic|
+      %img{:alt => "slide image", :src => pic.image_url(:thumbbig).to_s}/
