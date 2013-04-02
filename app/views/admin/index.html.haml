@@ -15,7 +15,7 @@
             / Thumbnails
             - @albums.each do |album|
               .large-6.small-6.columns
-                %img{:src => album.albumthumbnail_url(:thumbsmal).to_s}
+                %img{:src => album.albumthumbnail_url(:thumbbig).to_s}
                 .panel
                   =link_to "Edit", edit_album_path(album)
                   =link_to "Destroy", album, :method => :delete, :data => { :confirm => 'Are you sure?' }
