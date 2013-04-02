@@ -10,35 +10,6 @@
         Admin Dashboard - Editing album
       .row
         = render @album.pictures
-        #photos
-        -#
-          - unless @album.new_record?
-            = fields_for Picture.new do |f|
-              = f.file_field :image, :rel => album_pictures_path(@album)
-
+        
       =link_to "Bild Hinzufügen", new_album_picture_path(@album), class: "button"
       = render 'form'
-
-
--#
-  = content_for :scripts do
-    :javascript
-      var upload_params = {
-        '#{key}' : '#{cookies[key]}',
-        '#{request_forgery_protection_token}' : '#{form_authenticity_token}',
-        '_http_accept': 'application/javascript'
-      };
-      var url = $('input#picture_image').attr('rel');
-      $('input#picture_image').uploadify({
-        'swf'          : '/assets/uploadify.swf',
-        'uploader'     : url,
-        'fileDataName' : 'picture[image]',
-        'fileExt'      : '*.png;*.jpg;*.gif',
-        'cancelImg'    : '/images/cancel.png',
-        'multi'        : true,
-        'scriptData'   : upload_params,
-        'auto'         : true,
-        'onComplete'   : function(e, id, obj, response, data) {
-          $('#photos').append(response);
-        }
-      });
