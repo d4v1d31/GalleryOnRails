@@ -11,3 +11,7 @@
         .large-12.columns
           = image_tag @picture.image_url.to_s
       = render "form"
+
+
+-content_for :modals do
+  = render 'picture_modal'

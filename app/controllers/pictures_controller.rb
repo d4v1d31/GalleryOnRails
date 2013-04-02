@@ -43,6 +43,10 @@ class PicturesController < ApplicationController
   # GET /pictures/1/edit
   def edit
     @picture = Picture.find(params[:id])
+    respond_to do |format|
+      format.html # edit.html.haml
+      format.js # edit.js
+    end
   end
 
   # POST /pictures

@@ -1,0 +1,9 @@
+.reveal-modal.medium{id: "picture" + @picture.id.to_s}
+  .row
+    .large-12.columns
+      = image_tag @picture.image_url.to_s
+  = render "form"
+  %a.button{href:"#", "data-reveal-id" => "picture" + @picture.id.to_s, id: "button" + @picture.id.to_s, style: "display: none;"} 
+    x
+  %a.close-reveal-modal
+    &#215;

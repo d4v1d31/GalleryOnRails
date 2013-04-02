@@ -10,6 +10,7 @@
         = render "layouts/navigation"
         = yield
         = render "layouts/footer"
-
+    #modals
+    = yield :modals
     = javascript_include_tag "application"
     = yield :scripts
