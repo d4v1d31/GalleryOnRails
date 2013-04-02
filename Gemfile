@@ -8,8 +8,7 @@ gem 'jquery-rails', '~> 2.2.1'
 gem 'sorcery'
 gem "rmagick"
 gem "carrierwave"
-gem "mini_magick"
-gem "flash_cookie_session"
+gem "jquery-fileupload-rails"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

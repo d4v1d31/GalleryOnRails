@@ -10,6 +10,11 @@
         Admin Dashboard - Editing album
       .row
         = render @album.pictures
-        
+
       =link_to "Bild Hinzufügen", new_album_picture_path(@album), class: "button"
+
+      = form_for [@album, Picture.new] do |f|
+        = f.label :image, "Upload Pictures:"
+        = f.file_field :image, multiple: true, name: "picture[image]"
+      
       = render 'form'
