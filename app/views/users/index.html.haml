@@ -4,8 +4,40 @@
 
       = render "shared/side_nav"
 
-    .small-10-columns
+    .small-10.columns
       %h2
         Nutzer Übersicht
       .alert-box.secondary
-        Willkommen! Hier finde Sie alle möglichkeiten zur Verwaltung der Seite.
+        Hier können alle Nutzer des Systems verwaltet werden.
+      %table
+        %thead
+          %tr
+            %th{width: "120px"}
+              User Mail Adress
+            %th{width: "250px"}
+              Permissions
+            %th 
+              Created at
+            %th 
+              Last Update
+            %th
+              Actions
+        %tbody
+          - @user.each do |user|
+            %tr
+              %td
+                = user.email
+              %td
+                .label.radius
+                  Admin
+                .label.radius
+                  Sommer_view
+              %td
+                = user.created_at
+              %td
+                = user.updated_at
+              %td
+                %a{href: "#"}
+                  Edit
+                %a{href: "#"}
+                  Destroy
