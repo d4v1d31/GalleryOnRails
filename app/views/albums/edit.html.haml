@@ -8,7 +8,7 @@
     .large-10.columns
       %h2
         Admin Dashboard - Editing album
-      .row
+      .row#pictures
         = render @album.pictures
 
       =link_to "Bild Hinzufügen", new_album_picture_path(@album), class: "button", "data-reveal-id" => "add-pictures"
@@ -20,5 +20,8 @@
     = form_for [@album, Picture.new] do |f|
       = f.label :image, "Upload Pictures:"
       = f.file_field :image, multiple: true, name: "picture[image]"
+
+    #progress-bars
+    -# = render "shared/progress_bar"
     %a.close-reveal-modal
       &#215;

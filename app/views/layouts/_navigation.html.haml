@@ -1,4 +1,3 @@
-/ Navigation
 %nav.top-bar
   %ul.title-area
     / Title Area
@@ -6,18 +5,23 @@
       %h1
         %a{:href => "/"}
           Gallery On Rails
+
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}
         %span menu
+  
   %section.top-bar-section
+    / Left Buttons
     %ul.left
       %li
         %a{:href => "#"} Start
       %li
         %a{:href => "#"} Albums
-    -if logged_in?
-      %ul.right
+    / Right Buttons
+    %ul.right
+      -if logged_in?
         %li
-          =link_to "logout", logout_path
-
-/ End Navigation
+          =link_to "Logout", logout_path
+      -else
+        %li
+          =link_to "Login", login_path, remote: true

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require_tree .
 
 $(document).foundation();

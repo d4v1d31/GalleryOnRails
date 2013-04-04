@@ -1,10 +1,12 @@
 
 .row
   .large-12.columns
+
     / Desktop Slider
     #slider
       = image_tag @promoted_pics.first.image_url.to_s if @promoted_pics.any?
     / End Desktop Slider
+
     / Mobile Header
     .row
       .small-12.show-for-small
@@ -12,10 +14,12 @@
         -if @promoted_pics.any?
           %img{:src => @promoted_pics.first.image_url(:thumbbig).to_s}/
     / End Mobile Header
+
 %br/
 .row
   .large-12.columns
     .row
+
       / Thumbnails
       - @albums.each do |album|
         .large-3.small-6.columns
@@ -24,7 +28,8 @@
           %h6.panel
             = album.description
       / End Thumbnails
-/ End Content
+
+/ For enabled javascript add slider
 - slider = escape_javascript(render 'shared/slider')
 - content_for :scripts do
   :javascript

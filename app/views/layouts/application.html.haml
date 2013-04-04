@@ -4,13 +4,25 @@
     %title GalleryOnRails
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
+
   %body
     .row
       .large-12.columns
+      
+        / Navigation
         = render "layouts/navigation"
+        / End Navigation
+
+        / Content
         = yield
+        / End Content
+
+        / Footer
         = render "layouts/footer"
+        / End Footer
+
     #modals
     = yield :modals
+
     = javascript_include_tag "application"
     = yield :scripts
