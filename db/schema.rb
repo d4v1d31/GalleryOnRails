@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130331131701) do
+ActiveRecord::Schema.define(:version => 20130405215132) do
 
   create_table "albums", :force => true do |t|
     t.text     "name"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(:version => 20130331131701) do
     t.datetime "updated_at",     :null => false
     t.boolean  "promoted"
     t.string   "albumthumbnail"
+  end
+
+  create_table "permission_assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "permission_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "permissions", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pictures", :force => true do |t|

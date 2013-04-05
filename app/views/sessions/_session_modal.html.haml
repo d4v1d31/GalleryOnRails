@@ -5,7 +5,7 @@
       -if notice
         %span.alert.error
           = notice
-      = form_tag sessions_path, remote: true do
+      = form_tag sessions_path do
         .field
           = label_tag :email
           = text_field_tag :email, params[:email]

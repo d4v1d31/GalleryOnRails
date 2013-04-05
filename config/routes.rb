@@ -1,5 +1,8 @@
 GalleryOnRails::Application.routes.draw do
 
+  resources :permissions
+
+
   # Public resources
   resources :albums do
     resources :pictures
