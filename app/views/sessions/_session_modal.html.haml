@@ -1,0 +1,29 @@
+.reveal-modal.medium#session
+  .row
+    .large-12.columns
+      %h2 Login
+      -if notice
+        %span.alert.error
+          = notice
+      = form_tag sessions_path, remote: true do
+        .field
+          = label_tag :email
+          = text_field_tag :email, params[:email]
+        
+        .field
+          = label_tag :password
+          = password_field_tag :password
+
+        .field
+          = check_box_tag :remember_me, 1, params[:remember_me] 
+          = label_tag :remember_me
+
+        .actions
+          = submit_tag "Log in", class: "button"
+
+  -# for javascript 
+  %a.button#session-button{href:"#", "data-reveal-id" => "session", style: "display: none;"} 
+    x
+  
+  %a.close-reveal-modal
+    &#215;
