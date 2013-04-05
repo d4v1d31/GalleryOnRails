@@ -20,7 +20,7 @@
                   =link_to "Edit", edit_album_path(album)
                   =link_to "Destroy", album, :method => :delete, :data => { :confirm => 'Are you sure?' }
                   %h6
-                    = album.description
+                    = album.name
           .row
             .large-12.columns
               = link_to 'New Album', new_album_path, class: "button"

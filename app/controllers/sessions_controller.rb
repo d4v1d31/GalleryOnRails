@@ -7,9 +7,8 @@ class SessionsController < ApplicationController
         format.html { redirect_back_or_to root_url, :notice => "Logged in!"}
         format.js
       else
-        flash.now.alert = "Email or password was invalid"
         format.html { render action: "new"}
-        format.js {render action: "new"}
+        format.js {render action: "new", :notice => "Login failed!"}
       end
     end
   end
