@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
   def admin?
   	return permissions.where(value: "admin").any?
   end
+
+  def edit_permission?(album)
+  	if (album == "any")
+
+  	end
+  end
 end

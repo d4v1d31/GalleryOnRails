@@ -28,10 +28,9 @@
               %td
                 = user.email
               %td
-                %span.label.radius
-                  Admin
-                %span.label.radius
-                  Sommer_view
+                -user.permissions.each do |permission|
+                  %span.label.radius
+                    =permission.name
               %td
                 = user.created_at
               %td
