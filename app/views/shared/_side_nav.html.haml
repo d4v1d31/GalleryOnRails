@@ -1,7 +1,8 @@
 %ul.side-nav
-  %li
-    %a{href: "/users"}
-      Users
+  -if current_user.admin?
+    %li
+      %a{href: "/users"}
+        Users
   %li
     %a{href: "/admin"}
       Albums

@@ -10,7 +10,7 @@ namespace :db do
     #Create Permissions
     #for User Role
     r1 = Role.create!(name: "Registered User")
-    p1 = Permission.create!(name: "Administrator" value: "admin")
+    p1 = Permission.create!(name: "Administrator", value: "admin")
 
 
   end

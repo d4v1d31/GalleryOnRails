@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   has_many :permission_assignments
   has_many :permissions, through: :permission_assignments
+
+  def admin?
+  	return permissions.where(value: "admin").any?
+  end
 end
